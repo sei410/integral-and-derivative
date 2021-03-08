@@ -15,13 +15,13 @@ def limit(Y):
     return sym.limit(Y, x, tmp)
 
 def derivative(Y):
-    return sym.diff(Y)
+    return sym.diff(x**2-12*x)
 
 def integral(Y):
     return sym.integrate(Y.x)
 
 expr = input("y = ")
-Y = sym.Eq(expr, 0)
+Y = sym.Eq(x**2-12*x, 0)
 print("1:極限計算")
 print("2:微分")
 print("3:積分")
