@@ -11,26 +11,25 @@ oo = sym.oo # 無限大
 
 def limit(Y):
     tmp = input("n → ")
-    tmp = sym.Eq(tmp,0)
     return sym.limit(Y, x, tmp)
 
 def derivative(Y):
-    return sym.diff(x**2-12*x)
+    return sym.diff(Y)
 
 def integral(Y):
-    return sym.integrate(Y.x)
+    return sym.integrate(Y, x)
 
 expr = input("y = ")
-Y = sym.Eq(x**2-12*x, 0)
+print(expr)
 print("1:極限計算")
 print("2:微分")
 print("3:積分")
 num=int(input("入力: "))
 
 if num==1:
-    ans=limit(Y)
+    ans=limit(expr)
 elif num==2:
-    ans = derivative(Y)
+    ans = derivative(expr)
 else:
-    ans=integral(Y)
+    ans=integral(expr)
 print(ans)
