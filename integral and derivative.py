@@ -16,20 +16,25 @@ def limit(Y):
 def derivative(Y):
     return sym.diff(Y)
 
-def integral(Y):
+def integral(Y,x):
     return sym.integrate(Y, x)
 
 expr = input("y = ")
 print(expr)
 print("1:極限計算")
 print("2:微分")
-print("3:積分")
-num=int(input("入力: "))
+print("3:不定積分")
+print("4:定積分")
+num=int(input("選択: "))
 
 if num==1:
     ans=limit(expr)
 elif num==2:
     ans = derivative(expr)
+elif num==3:
+    ans=integral(expr,x)
 else:
-    ans=integral(expr)
-print(ans)
+    upper = input("上端: ")
+    bottom = input("下端: ")
+    ans = integral(expr, (x,bottom,upper))
+print("解: ",ans)
